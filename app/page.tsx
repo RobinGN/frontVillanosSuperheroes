@@ -18,19 +18,15 @@ export default function Home() {
       <p className="text-lg text-white mb-6">Explora nuestra base de datos de superhéroes y villanos.</p>
 
       <div className="flex justify-center gap-4 mb-6">
-        <Link href="/todos">
-          <button className="px-6 py-3 rounded-full text-lg bg-yellow-600 text-white hover:bg-yellow-700 transition duration-300">
-            Todos
-          </button>
-        </Link>
+        
         <Link href="/superheroes">
           <button className="px-6 py-3 rounded-full text-lg bg-blue-600 text-white hover:bg-blue-700 transition duration-300">
-            Superhéroe
+            Superhéroes
           </button>
         </Link>
         <Link href="/villanos">
           <button className="px-6 py-3 rounded-full text-lg bg-red-600 text-white hover:bg-red-700 transition duration-300">
-            Villano
+            Villanos
           </button>
         </Link>
       </div>

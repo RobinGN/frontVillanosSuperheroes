@@ -16,7 +16,17 @@ export default function SuperheroesPage() {
   }, []);
 
   return (
-    <div className="h-screen w-full flex flex-col items-center p-8 bg-gray-900 text-white">
+    <div
+      className="h-screen w-full flex flex-col items-center p-8 text-white"
+      style={{
+        backgroundImage: "url('/images/Background.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+    <div className="h-screen w-full flex flex-col items-center p-8 text-white">
       <h1 className="text-4xl font-bold mb-6">Lista de Superhéroes</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
@@ -40,6 +50,7 @@ export default function SuperheroesPage() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
