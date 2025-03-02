@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function VillainsPage() {
   const [villains, setVillains] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     fetch("http://localhost:3001/api/LigaDeLaJusticia/supervillians")
@@ -17,7 +19,7 @@ export default function VillainsPage() {
 
   return (
     <div
-      className="h-screen w-full flex flex-col items-center p-8 text-white"
+      className="min-h-screen w-full flex flex-col items-center p-8 text-white"
       style={{
         backgroundImage: "url('/images/JLV.png')",
         backgroundSize: "cover",
@@ -27,6 +29,14 @@ export default function VillainsPage() {
       }}
     >
       <h1 className="text-4xl font-bold mb-6">Lista de Villanos</h1>
+
+       {/* Botón de regreso */}
+       <button
+        onClick={() => router.push("/")}
+        className="absolute top-6 left-6 bg-red-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700 transition"
+      >
+        ← Regresar
+      </button>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
         {villains.map((villain, index) => (

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SuperheroesPage() {
   const [superheroes, setSuperheroes] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     fetch("http://localhost:3001/api/LigaDeLaJusticia/superheroes")
@@ -17,7 +19,7 @@ export default function SuperheroesPage() {
 
   return (
     <div
-      className="h-screen w-full flex flex-col items-center p-8 text-white"
+      className="min-h-screen w-full flex flex-col items-center p-8 text-white relative"
       style={{
         backgroundImage: "url('/images/JL.png')",
         backgroundSize: "cover",
@@ -26,7 +28,14 @@ export default function SuperheroesPage() {
         backgroundAttachment: "fixed",
       }}
     >
-    <div className="h-screen w-full flex flex-col items-center p-8 text-white">
+       {/* Botón de regreso */}
+       <button
+        onClick={() => router.push("/")}
+        className="absolute top-6 left-6 bg-blue-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
+      >
+        ← Regresar
+      </button>
+
       <h1 className="text-4xl font-bold mb-6">Lista de Superhéroes</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
@@ -50,7 +59,6 @@ export default function SuperheroesPage() {
           </div>
         ))}
       </div>
-    </div>
     </div>
   );
 }

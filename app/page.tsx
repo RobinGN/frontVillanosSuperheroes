@@ -19,6 +19,11 @@ export default function Home() {
 
       <div className="flex justify-center gap-4 mb-6">
         
+      <Link href="/todos">
+  <button className="px-6 py-3 rounded-full text-lg bg-gray-600 text-white hover:bg-gray-700 transition duration-300">
+    Todos
+  </button>
+</Link>
         <Link href="/superheroes">
           <button className="px-6 py-3 rounded-full text-lg bg-blue-600 text-white hover:bg-blue-700 transition duration-300">
             Superhéroes
@@ -29,6 +34,11 @@ export default function Home() {
             Villanos
           </button>
         </Link>
+        <Link href="/organization">
+  <button className="px-6 py-3 rounded-full text-lg bg-yellow-600 text-white hover:bg-yellow-700 transition duration-300">
+    organization
+  </button>
+</Link>
       </div>
     </div>
   );
