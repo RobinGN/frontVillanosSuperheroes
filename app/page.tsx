@@ -13,7 +13,7 @@ export default function Home() {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
-    >
+    >  
       <h1 className="text-4xl font-bold text-white mb-6">Liga de la Justicia</h1>
       <p className="text-lg text-white mb-6">Explora nuestra base de datos de superhéroes y villanos.</p>
 
