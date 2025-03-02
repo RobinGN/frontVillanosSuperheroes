@@ -19,7 +19,7 @@ export default function VillainsPage() {
     <div
       className="h-screen w-full flex flex-col items-center p-8 text-white"
       style={{
-        backgroundImage: "url('/images/Background.jpg')",
+        backgroundImage: "url('/images/JLV.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

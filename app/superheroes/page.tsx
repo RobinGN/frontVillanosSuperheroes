@@ -19,7 +19,7 @@ export default function SuperheroesPage() {
     <div
       className="h-screen w-full flex flex-col items-center p-8 text-white"
       style={{
-        backgroundImage: "url('/images/Background.jpg')",
+        backgroundImage: "url('/images/JL.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

@@ -7,7 +7,7 @@ export default function Home() {
     <div
       className="h-screen w-full flex flex-col items-center p-8"
       style={{
-        backgroundImage: "url('/images/Background.jpg')",
+        backgroundImage: "url('/images/DCB.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
