@@ -36,7 +36,7 @@ export default function Home() {
         </Link>
         <Link href="/organization">
   <button className="px-6 py-3 rounded-full text-lg bg-yellow-600 text-white hover:bg-yellow-700 transition duration-300">
-    organization
+    Organización
   </button>
 </Link>
       </div>
