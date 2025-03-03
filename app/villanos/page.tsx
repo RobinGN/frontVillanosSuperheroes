@@ -79,7 +79,7 @@ export default function VillainsPage() {
         ← Regresar
       </button>
 
-      <h1 className="text-4xl font-bold mb-6">Lista de Villanos</h1>
+      <h1 className="text-4xl font-bold mb-6 text-white">Lista de Villanos</h1>
 
       <div className="flex items-center w-full max-w-3xl mb-6 gap-4">
         {/* Barra de búsqueda */}

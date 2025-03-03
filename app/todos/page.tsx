@@ -92,7 +92,7 @@ export default function TodosPage() {
       <button onClick={() => router.push("/")} className="absolute top-6 left-6 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-700 transition">← Regresar</button>
       
       <div className="mb-4 flex flex-wrap gap-4">
-        <input type="text" placeholder="Buscar por nombre" value={search} onChange={(e) => setSearch(e.target.value)} className="p-2 rounded bg-white text-black" />
+        <input type="text" placeholder="Buscar por nombre" value={search} onChange={(e) => setSearch(e.target.value)} className="px-4 py-2 rounded bg-white text-black" />
         <select onChange={(e) => setSortOrder(e.target.value)} className="p-2 rounded bg-white text-black">
           <option value="a-z">Orden A-Z</option>
           <option value="z-a">Orden Z-A</option>

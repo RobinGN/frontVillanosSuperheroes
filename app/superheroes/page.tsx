@@ -83,7 +83,7 @@ export default function SuperheroesPage() {
         ← Regresar
       </button>
 
-      <h1 className="text-4xl font-bold mb-6">Lista de Superhéroes</h1>
+      <h1 className="text-4xl font-bold mb-6 text-gray-800">Lista de Superhéroes</h1>
 
       <div className="flex gap-4 mb-6 w-full max-w-4xl">
         <input
@@ -91,7 +91,7 @@ export default function SuperheroesPage() {
           placeholder="Buscar superhéroe..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="p-3 w-full rounded-lg border border-gray-300 bg-gray-800 text-white"
+          className="px-4 py-2 rounded-lg border border-gray-300 bg-gray-800 text-white"
         />
         
         <select onChange={(e) => setFilter(e.target.value)} value={filter} className="bg-gray-800 px-4 py-2 rounded-lg text-white">
