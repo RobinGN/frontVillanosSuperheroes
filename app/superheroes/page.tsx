@@ -85,26 +85,24 @@ export default function SuperheroesPage() {
 
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Lista de Superhéroes</h1>
 
-      <div className="flex justify-center items-center gap-4 mb-6 w-full max-w-4xl">
-        <input
-          type="text"
-          placeholder="Buscar superhéroe..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="px-4 py-2 rounded-lg border border-gray-300 bg-gray-800 text-white"
+      <div className="mb-4 flex flex-wrap gap-4">
+        <input 
+          type="text" 
+          placeholder="Buscar por nombre" 
+          value={searchQuery} 
+          onChange={(e) => setSearchQuery(e.target.value)} 
+          className="px-4 py-2 rounded bg-white text-black" 
         />
-        
-        <select onChange={(e) => setFilter(e.target.value)} value={filter} className="bg-gray-800 px-4 py-2 rounded-lg text-white">
-          <option value="default">Ordenar por...</option>
-          <option value="az">A-Z</option>
-          <option value="za">Z-A</option>
-          <option value="ageAsc">Edad ⬆</option>
-          <option value="ageDesc">Edad ⬇</option>
+        <select onChange={(e) => setFilter(e.target.value)} className="p-2 rounded bg-white text-black">
+          <option value="az">Orden A-Z</option>
+          <option value="za">Orden Z-A</option>
+          <option value="ageAsc">Edad: Menor a Mayor</option>
+          <option value="ageDesc">Edad: Mayor a Menor</option>
         </select>
-        
-        <select onChange={(e) => setOriginFilter(e.target.value)} value={originFilter} className="bg-gray-800 px-4 py-2 rounded-lg text-white">
-          {uniqueOrigins.map((origin, index) => (
-            <option key={index} value={origin} className="text-black">{origin === "all" ? "Todos los orígenes" : origin}</option>
+        <select onChange={(e) => setOriginFilter(e.target.value)} className="p-2 rounded bg-white text-black">
+          <option value="all">Filtrar por Ciudad</option>
+          {uniqueOrigins.map((city, index) => (
+            <option key={index} value={city}>{city}</option>
           ))}
         </select>
       </div>
