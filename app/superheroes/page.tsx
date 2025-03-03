@@ -85,7 +85,7 @@ export default function SuperheroesPage() {
 
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Lista de Superhéroes</h1>
 
-      <div className="flex gap-4 mb-6 w-full max-w-4xl">
+      <div className="flex justify-center items-center gap-4 mb-6 w-full max-w-4xl">
         <input
           type="text"
           placeholder="Buscar superhéroe..."
