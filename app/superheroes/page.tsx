@@ -91,7 +91,7 @@ export default function SuperheroesPage() {
           placeholder="Buscar superhéroe..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="p-3 w-full rounded-lg border border-gray-300 text-black"
+          className="p-3 w-full rounded-lg border border-gray-300 bg-gray-800 text-white"
         />
         
         <select onChange={(e) => setFilter(e.target.value)} value={filter} className="bg-gray-800 px-4 py-2 rounded-lg text-white">
