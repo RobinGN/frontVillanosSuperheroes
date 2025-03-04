@@ -5,11 +5,11 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div
-      className="h-screen w-full flex flex-col items-center p-8"
+      className="h-screen w-full flex flex-col items-center p-1"
       style={{
-        backgroundImage: "url('/images/DCB.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundImage: "url('/images/DCSP.png')",
+        backgroundSize: "90% auto",
+        backgroundPosition: "center -150%",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
