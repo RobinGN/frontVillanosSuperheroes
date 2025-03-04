@@ -47,7 +47,7 @@ export default function SuperheroesPage() {
       const response = await fetch(url, { method: "DELETE" });
 
       if (response.ok) {
-        alert(`Superhéroe "${heroToDelete}" eliminado correctamente.`);
+        //alert(`Superhéroe "${heroToDelete}" eliminado correctamente.`);
         setHeroToDelete(""); 
         fetchSuperheroes(); 
       } else {
@@ -138,7 +138,6 @@ export default function SuperheroesPage() {
         </select>
       </div>
 
-      {/* Campo para eliminar superhéroe */}
       <div className="mb-6 flex gap-4">
         <input
           type="text"
@@ -194,6 +193,15 @@ export default function SuperheroesPage() {
                 </p>
                 <p>
                   <strong>Ocupación:</strong> {hero.Occupation}
+                </p>
+                <p>
+                  <strong>Nemesis:</strong> {hero["Nemesis"]}
+                </p>
+                <p>
+                  <strong>Comida Favorita:</strong> {hero["Favorite food"]}
+                </p>
+                <p>
+                  <strong>Dato Curioso:</strong> {hero["Fun fact"]}
                 </p>
               </div>
             </div>

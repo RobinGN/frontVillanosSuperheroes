@@ -21,6 +21,11 @@ export default function Home() {
     "Fun fact": "",
     "Favorite food": "",
   });
+  const [mostrarFormModificar, setMostrarFormModificar] = useState(false);
+  const [tipoModificar, setTipoModificar] = useState("superheroe");
+  const [nombrePersonaje, setNombrePersonaje] = useState("");
+  const [campoModificar, setCampoModificar] = useState("age");
+  const [nuevoValor, setNuevoValor] = useState("");
 
   const handleChange = (e) => {
     setPersonaje({ ...personaje, [e.target.name]: e.target.value });
@@ -77,6 +82,41 @@ export default function Home() {
     }
   };
 
+  const handleModificar = async (e) => {
+    e.preventDefault();
+    
+    if (!nombrePersonaje.trim() || !nuevoValor.trim()) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+  
+    const endpoint = campoModificar.toLowerCase().replace(/ /g, '');
+    const tipo = tipoModificar === "superheroe" ? "Superheroes" : "supervillians";
+    
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/LigaDeLaJusticia/${tipo}/${encodeURIComponent(nombrePersonaje)}/${endpoint}`, 
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Update: nuevoValor }),
+        }
+      );
+  
+      if (!response.ok) throw new Error("Error en la modificación");
+      
+      //alert("Modificación exitosa!");
+      setNombrePersonaje("");
+      setNuevoValor("");
+      setMostrarFormModificar(false);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error al modificar el personaje");
+    }
+  };
+
   return (
     <div
       className="h-screen w-full flex flex-col items-center p-1 bg-black"
@@ -127,6 +167,72 @@ export default function Home() {
             className="w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700"
           >
             Guardar Personaje
+          </button>
+        </form>
+      )}
+
+      <button
+        onClick={() => setMostrarFormModificar(!mostrarFormModificar)}
+        className="absolute top-4.5 left-48 px-6 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700"
+      >
+        {mostrarFormModificar ? "Cerrar" : "Modificar Personaje"}
+      </button>
+
+      {mostrarFormModificar && (
+        <form
+          onSubmit={handleModificar}
+          className="absolute top-16 left-44 bg-white p-4 rounded-lg shadow-lg w-80"
+        >
+          <div className="mb-2">
+            <label className="block text-sm font-bold mb-2">Tipo de personaje:</label>
+            <select
+              value={tipoModificar}
+              onChange={(e) => setTipoModificar(e.target.value)}
+              className="w-full p-1 border rounded"
+            >
+              <option value="superheroe">Superhéroe</option>
+              <option value="villano">Villano</option>
+            </select>
+          </div>
+
+          <div className="mb-2">
+            <label className="block text-sm font-bold">Nombre del personaje:</label>
+            <input
+              type="text"
+              value={nombrePersonaje}
+              onChange={(e) => setNombrePersonaje(e.target.value)}
+              className="w-full p-1 border rounded"
+            />
+          </div>
+
+          <div className="mb-2">
+            <label className="block text-sm font-bold">Campo a modificar:</label>
+            <select
+              value={campoModificar}
+              onChange={(e) => setCampoModificar(e.target.value)}
+              className="w-full p-1 border rounded"
+            >
+              <option value="age">Edad</option>
+              <option value="nemesis">Nemesis</option>
+              <option value="Favorite food">Comida favorita</option>
+            </select>
+          </div>
+
+          <div className="mb-2">
+            <label className="block text-sm font-bold">Nuevo valor:</label>
+            <input
+              type="text"
+              value={nuevoValor}
+              onChange={(e) => setNuevoValor(e.target.value)}
+              className="w-full p-1 border rounded"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-orange-600 text-white py-2 rounded-lg mt-2 hover:bg-orange-700"
+          >
+            Modificar
           </button>
         </form>
       )}

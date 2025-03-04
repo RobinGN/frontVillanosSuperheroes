@@ -161,6 +161,9 @@ export default function VillainsPage() {
                 <p><strong>Poderes:</strong> {villain.Powers}</p>
                 <p><strong>Fortuna:</strong> {villain["Net Worth"]}</p>
                 <p><strong>Ocupación:</strong> {villain.Occupation}</p>
+                <p><strong>Nemesis:</strong> {villain["Nemesis"]}</p>
+                <p><strong>Comida Favorita:</strong> {villain["Favorite food"]}</p>
+                <p><strong>Dato Curioso:</strong> {villain["Fun fact"]}</p>
               </div>
             </div>
           );
