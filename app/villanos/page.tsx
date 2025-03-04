@@ -127,7 +127,7 @@ export default function VillainsPage() {
       <div className="mb-4 flex gap-4">
         <input 
           type="text" 
-          placeholder="Eliminar villano por nombre" 
+          placeholder="Villano a Eliminar" 
           value={deleteQuery} 
           onChange={(e) => setDeleteQuery(e.target.value)} 
           className="px-4 py-2 rounded bg-white text-black" 

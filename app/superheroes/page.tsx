@@ -8,7 +8,7 @@ export default function SuperheroesPage() {
   const [filter, setFilter] = useState("default");
   const [originFilter, setOriginFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [heroToDelete, setHeroToDelete] = useState(""); // Estado para eliminar héroes
+  const [heroToDelete, setHeroToDelete] = useState("");
   const router = useRouter();
 
   const images = {
