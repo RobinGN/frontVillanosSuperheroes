@@ -13,6 +13,9 @@ interface Character {
   Powers: string;
   "Net Worth": string;
   Occupation: string;
+  Nemesis: string;         
+  "Favorite food": string;  
+  "Fun fact": string;  
 }
 
 const images: Record<string, string> = {
@@ -123,6 +126,9 @@ export default function TodosPage() {
                 <p><strong>Poderes:</strong> {character.Powers}</p>
                 <p><strong>Fortuna:</strong> {character["Net Worth"]}</p>
                 <p><strong>Ocupación:</strong> {character.Occupation}</p>
+                <p><strong>Nemesis:</strong> {character.Nemesis}</p>
+                <p><strong>Comida Favorita:</strong> {character["Favorite food"]}</p>
+                <p><strong>Dato Curioso:</strong> {character["Fun fact"]}</p>
               </div>
             </div>
           );
