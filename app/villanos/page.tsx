@@ -8,6 +8,7 @@ export default function VillainsPage() {
   const [filter, setFilter] = useState("default");
   const [originFilter, setOriginFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [deleteQuery, setDeleteQuery] = useState("");
   const router = useRouter();
 
   const images = {
@@ -62,6 +63,23 @@ export default function VillainsPage() {
     return filteredVillains;
   };
 
+  const deleteVillain = () => {
+    if (!deleteQuery.trim()) return;
+    
+    fetch(`http://localhost:3001/api/LigaDeLaJusticia/supervillians/${deleteQuery}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (res.ok) {
+          setVillains(villains.filter(villain => villain.Name.toLowerCase() !== deleteQuery.toLowerCase()));
+          setDeleteQuery("");
+        } else {
+          console.error("Error al eliminar el villano");
+        }
+      })
+      .catch((error) => console.error("Error en la solicitud de eliminación:", error));
+  };
+
   const uniqueOrigins = ["all", ...new Set(villains.map(villain => villain["Place of Origin"]))];
 
   return (
@@ -104,6 +122,22 @@ export default function VillainsPage() {
             <option key={index} value={city}>{city}</option>
           ))}
         </select>
+      </div>
+
+      <div className="mb-4 flex gap-4">
+        <input 
+          type="text" 
+          placeholder="Eliminar villano por nombre" 
+          value={deleteQuery} 
+          onChange={(e) => setDeleteQuery(e.target.value)} 
+          className="px-4 py-2 rounded bg-white text-black" 
+        />
+        <button 
+          onClick={deleteVillain} 
+          className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-500 transition"
+        >
+          Eliminar
+        </button>
       </div>
 
       <div className="w-full flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
