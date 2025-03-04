@@ -46,7 +46,7 @@ export default function OrganizationPage() {
         <h2 className="text-3xl font-semibold text-center">{organization.Name}</h2>
 
         <div className="mt-4 text-gray-700 w-full text-lg">
-          <p><strong>Ubicación:</strong> {organization.Ubicacion}</p>
+          <p><strong>Ubicación:</strong> {organization.Ubication}</p>
           <p><strong>Fecha de Inauguración:</strong> {organization["Inauguration Date"]}</p>
           <p><strong>Propietario:</strong> {organization.Owner}</p>
           <p><strong>Estado:</strong> {organization.Status}</p>
